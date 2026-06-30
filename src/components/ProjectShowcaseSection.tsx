@@ -17,32 +17,28 @@ const projectsData = [
       {
         category: 'CORPORATE INTERIOR',
         title: 'Executive Suite',
-        image:
-          'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85',
+        image: '/1.jpg',
         description:
           'A workspace envisioned as a living system — where technology, light, and form converge to elevate the rhythm of modern work.',
       },
       {
         category: 'CORPORATE INTERIOR',
         title: 'Collaborative Hub',
-        image:
-          'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=85',
+        image: '/1.jpg',
         description:
           'Open-plan environments designed for seamless collaboration, integrating smart technology with biophilic principles.',
       },
       {
         category: 'CORPORATE INTERIOR',
         title: 'Executive Boardroom',
-        image:
-          'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=85',
+        image: '/1.jpg',
         description:
           'An executive boardroom that balances authority with warmth, featuring custom joinery and ambient lighting systems.',
       },
       {
         category: 'CORPORATE INTERIOR',
         title: 'Wellness Zone',
-        image:
-          'https://images.unsplash.com/photo-1604328698692-f76ea9498e72?w=1200&q=85',
+        image: '/1.jpg',
         description:
           'Wellness-focused zones that promote employee wellbeing through thoughtful spatial planning and natural materiality.',
       },
@@ -57,32 +53,28 @@ const projectsData = [
       {
         category: 'CULTURAL DESIGN',
         title: 'Reception & Lounge',
-        image:
-          'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=85',
+        image: '/2.jpg',
         description:
           'A reception space that embodies the meeting of Japanese minimalism and Emirati heritage through curated materiality.',
       },
       {
         category: 'CULTURAL DESIGN',
         title: 'Private Offices',
-        image:
-          'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85',
+        image: '/2.jpg',
         description:
           'Private work sanctuaries designed for deep focus, wrapped in natural textures and diffused daylight.',
       },
       {
         category: 'CULTURAL DESIGN',
         title: 'Meeting Pavilion',
-        image:
-          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85',
+        image: '/2.jpg',
         description:
           'A flexible pavilion for gatherings that transforms from presentation mode to collaborative workshop seamlessly.',
       },
       {
         category: 'CULTURAL DESIGN',
         title: 'Tea Ceremony Room',
-        image:
-          'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=85',
+        image: '/2.jpg',
         description:
           'A contemplative tea room inspired by chanoyu — a space for ritual, pause, and meaningful connection.',
       },
@@ -97,32 +89,28 @@ const projectsData = [
       {
         category: 'FITNESS INTERIOR',
         title: 'Main Arena',
-        image:
-          'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=85',
+        image: '/3.jpg',
         description:
           'A main arena that pulses with energy — raw concrete, dramatic lighting, and the spirit of the ring.',
       },
       {
         category: 'FITNESS INTERIOR',
         title: 'Training Zone',
-        image:
-          'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=85',
+        image: '/3.jpg',
         description:
           'A training zone where every surface and sightline is engineered to push performance and motivation.',
       },
       {
         category: 'FITNESS INTERIOR',
         title: 'Recovery Suite',
-        image:
-          'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=85',
+        image: '/3.jpg',
         description:
           'A recovery suite designed as a calm counterpoint — soft textures, muted tones, and restorative ambiance.',
       },
       {
         category: 'FITNESS INTERIOR',
         title: 'Fuel Bar',
-        image:
-          'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&q=85',
+        image: '/3.jpg',
         description:
           'A fuel bar that fuses nutrition with social energy, featuring bold graphics and an open-kitchen concept.',
       },
