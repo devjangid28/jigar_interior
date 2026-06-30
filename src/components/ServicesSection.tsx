@@ -181,7 +181,7 @@ export default function ServicesSection() {
           <div className="flex flex-col items-start gap-2 lg:gap-4 w-full md:max-w-150">
             <div>
               <div className="services-fade" style={{ opacity: 0, transform: 'translateY(40px)' }}>
-                <span className="text-theme-dark-green font-nohemi text-xs leading-[120%] tracking-[0.03rem] uppercase">SERVICES</span>
+                <span className="text-white font-nohemi text-xs leading-[120%] tracking-[0.03rem] uppercase">SERVICES</span>
               </div>
             </div>
             <div>

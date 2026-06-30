@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Abvtek | Design & Build Company in Dubai | Architecture, Interior & Technology',
-  description: 'Abvtek is a Dubai-based design & build firm combining architecture, interior design, and advanced technology to deliver intelligent, high-performance spaces.',
+  title: 'Jigar Interiors | Design & Build Company | Architecture, Interior & Technology',
+  description: 'Jigar Interiors is a design & build firm combining architecture, interior design, and advanced technology to deliver intelligent, high-performance spaces.',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',

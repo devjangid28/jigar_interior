@@ -1,13 +1,24 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -33,38 +44,144 @@ export default function Footer() {
   ];
 
   return (
-    <footer ref={ref} className="bg-black text-white/50 border-t border-white/10 px-4 md:px-8 py-12 md:py-16">
-      <div className="max-w-7xl mx-auto">
-        <div className="footer-fade mb-10" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="118" height="25" viewBox="0 0 118 25" fill="none">
-            <path d="M52.989 20.9816L57.8321 5.95312H61.8917L55.8289 23.4761H52.0381" fill="currentColor" />
-            <path d="M60.1316 20.9816L64.9747 5.95312H69.0342L62.9715 23.4761H59.1807" fill="currentColor" />
-            <path d="M8.68222 6.00162C13.9292 6.00162 17.0636 8.83056 17.0636 13.6063V24.0012H13.0909V19.408C12.2751 22.5552 9.6959 24.4778 6.14964 24.4778C2.60338 24.4778 0 22.3872 0 19.2481C0 16.1089 2.65165 14.0102 7.02816 14.0102H13.0909V13.6047C13.0909 10.9583 11.3886 9.32979 8.60338 9.32979C5.81818 9.32979 4.47949 10.6643 4.47949 12.7387H0.514883C0.514883 8.59791 3.64924 6 8.68222 6V6.00162ZM7.25825 16.8085C5.09735 16.8085 3.95817 17.5549 3.95817 18.9783C3.95817 20.4727 5.22446 21.3064 7.51247 21.3064C10.7578 21.3064 13.0925 19.6293 13.0925 17.3093V16.8085H7.25986H7.25825Z" fill="currentColor" />
-            <path d="M23.2324 11.8327C24.0707 8.19275 26.3185 6.00036 29.4142 6.00036C33.6331 6.00036 36.6242 9.82291 36.6242 15.2352C36.6242 20.6475 33.6331 24.4782 29.4142 24.4782C26.3201 24.4782 24.0723 22.2842 23.2324 18.6458V24.0016H19.2598V0.476562H23.2324V11.8327ZM27.9806 21.0111C31.012 21.0111 32.6339 19.0012 32.6339 15.2336C32.6339 11.466 31.012 9.46424 27.9806 9.46424C24.9492 9.46424 23.2324 11.5936 23.2324 15.2336C23.2324 18.8736 24.9975 21.0111 27.9806 21.0111Z" fill="currentColor" />
-            <path d="M54.5522 6.47852L48.4895 24.0015H42.7115L36.7051 6.47852H40.8595L45.648 21.507L50.4911 6.47852H54.5506H54.5522Z" fill="currentColor" />
-            <path d="M77.4531 23.9918C73.7894 23.9918 71.8425 21.7752 71.8425 17.4825V9.24125H69.5625L70.7323 5.9987H71.8425V1.96289H75.8151V6.00032H81.2133V9.24286H75.8151V17.4922C75.8151 19.662 76.5826 20.6475 78.3236 20.6475C79.0122 20.6475 79.9454 20.4973 81.2117 20.1628V23.3892C79.7958 23.7947 78.544 23.9935 77.4531 23.9935V23.9918Z" fill="currentColor" />
-            <path d="M99.0578 17.6503C98.131 21.6085 95.0288 23.9996 90.8663 23.9996C85.666 23.9996 82.168 20.2724 82.168 14.7422C82.168 9.21189 85.6273 5.52344 90.7713 5.52344C95.9154 5.52344 99.1366 9.13111 99.1366 14.7018C99.1366 15.1154 99.1205 15.5209 99.0738 15.9733H86.094C86.427 18.8894 88.2227 20.6375 90.9693 20.6375C93.0513 20.6375 94.4512 19.6278 95.2267 17.6486H99.0578V17.6503ZM95.2026 13.112C94.7826 10.338 93.2557 8.85161 90.7858 8.85161C88.316 8.85161 86.5831 10.4252 86.1487 13.112H95.2026Z" fill="currentColor" />
-            <path d="M108.312 14.9008L118 23.5234H112.682L105.006 16.5148V23.5234H101.033V0H105.006V13.589L112.39 6.0004H117.241L108.312 14.9008Z" fill="currentColor" />
-          </svg>
+    <footer ref={ref} className="bg-black px-4 py-20 md:px-8 md:pt-28 md:pb-8">
+      <div className="pb-16 md:pb-28 flex items-start flex-col gap-16 md:justify-between md:flex-row md:gap-20">
+        <div className="flex-1">
+          <div className="flex flex-col items-start gap-2 lg:gap-4 w-full md:max-w-150">
+            <div className="footer-fade" style={{ opacity: 0, transform: 'translateY(40px)' }}>
+              <span className="text-white font-nohemi text-xs leading-[120%] tracking-[0.03rem] uppercase">
+                Write us
+              </span>
+            </div>
+            <div className="footer-fade" style={{ opacity: 0, transform: 'translateY(40px)' }}>
+              <div className="font-nohemi text-[1.75rem] leading-[100%] md:text-[2.2rem] lg:text-[2.625rem] md:leading-[110%] uppercase -indent-16 md:-indent-20 lg:-indent-24 ml-16 md:ml-20 lg:ml-24 text-white">
+                Great interiors <br /> begins with a <br className="md:hidden" /> conversation
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="footer-fade flex flex-wrap items-center gap-x-2 gap-y-2 mb-10 text-xs" style={{ opacity: 0, transform: 'translateY(20px)', color: '#7a7a72' }}>
-          {links.map((link, i) => (
-            <span key={i} className="flex items-center gap-x-2">
-              <a href={link.href} className="hover:text-white transition-colors duration-300 no-underline text-xs font-inter">
-                {link.label}
-              </a>
-              {i < links.length - 1 && <span className="text-white/30">/</span>}
-            </span>
-          ))}
-        </div>
-        <div className="footer-fade flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] text-white/40" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          <p className="font-inter">Copyright ABVTEK 2026. All Rights Reserved</p>
-          <div className="flex gap-6">
-            <a href="/privacy-and-cookies" className="hover:text-white transition-colors duration-300 no-underline font-inter">Privacy & Cookies</a>
-            <a href="/terms-and-conditions" className="hover:text-white transition-colors duration-300 no-underline font-inter">Terms & Conditions</a>
+        <div className="w-full flex-1">
+          <form id="form-contact-form-contact">
+            <div className="flex flex-col w-full gap-7">
+              <div className="flex flex-col w-full">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="NAME"
+                  autoComplete="off"
+                  className="placeholder:text-white/40 text-white bg-transparent text-base outline-none h-9 w-full py-1 border-b-[0.3px] border-white disabled:opacity-50"
+                />
+              </div>
+              <div className="flex flex-col w-full">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="EMAIL"
+                  autoComplete="off"
+                  className="placeholder:text-white/40 text-white bg-transparent text-base outline-none h-9 w-full py-1 border-b-[0.3px] border-white disabled:opacity-50"
+                />
+              </div>
+              <div className="flex flex-col w-full">
+                <div className="flex gap-4">
+                  <button
+                    type="button"
+                    className="flex gap-2 bg-transparent border-b-[0.3px] border-white border-t-0 border-x-0 shadow-none rounded-none h-7 text-white text-sm pr-1 pl-0 pb-3 cursor-pointer"
+                  >
+                    <span className="flex w-[29.7px] h-5 overflow-hidden rounded-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342" className="size-full">
+                        <title>IN</title>
+                        <path fill="#F93" d="M0 0h513v114H0z" />
+                        <path fill="#fff" d="M0 114h513v114H0z" />
+                        <path fill="#138808" d="M0 228h513v114H0z" />
+                        <circle cx="256.5" cy="171" r="34.2" stroke="navy" strokeWidth="4" fill="none" />
+                        <circle cx="256.5" cy="171" r="3.42" fill="navy" />
+                        <path d="m265.3 138.159-17.6 65.682m17.6-65.682-17.6 65.682m25.8-62.286-34 58.89m41.042-53.487-48.084 48.084M285.945 154l-58.89 34m62.286-25.8-65.682 17.6M290.5 171h-68m66.841 8.8-65.682-17.6m62.286 25.8-58.89-34m53.487 41.042-48.084-48.084m41.042 53.487-34-58.89m25.8 62.286-17.6-65.682M256.5 205v-68m-8.8 66.841 17.6-65.682m-25.8 62.286 34-58.89m-41.042 53.487 48.084-48.084M227.055 188l58.89-34m-62.286 25.8 65.682-17.6M222.5 171h68m-66.841-8.8 65.682 17.6M227.055 154l58.89 34m-53.487-41.042 48.084 48.084M239.5 141.555l34 58.89m-25.8-62.286 17.6 65.682" stroke="navy" strokeWidth="2" />
+                      </svg>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4.5 transition-transform duration-300 ease-in-out">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="099876 54321"
+                    autoComplete="tel"
+                    className="placeholder:text-white/40 text-white bg-transparent outline-none w-full py-1 border-b-[0.3px] border-white disabled:opacity-50 text-sm"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col w-full">
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="COMPANY"
+                  autoComplete="off"
+                  className="placeholder:text-white/40 text-white bg-transparent text-base outline-none h-9 w-full py-1 border-b-[0.3px] border-white disabled:opacity-50"
+                />
+              </div>
+              <div className="flex flex-col w-full">
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="DETAILS ABOUT YOUR PROJECTS"
+                  rows={1}
+                  className="placeholder:text-white/40 text-white bg-transparent text-base outline-none w-full border-b-[0.3px] border-white py-3 resize-none disabled:opacity-50 field-sizing-content"
+                />
+              </div>
+            </div>
+          </form>
+          <div className="flex justify-end mt-8">
+            <button
+              type="submit"
+              form="form-contact-form-contact"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium relative rounded-none border-0 bg-transparent hover:bg-transparent cursor-pointer text-white w-fit px-0 leading-[131%] uppercase transition-all hover:shadow-none font-normal md:text-base after:content-[''] after:absolute after:left-0 after:bottom-1.5 after:h-[1px] after:w-full after:bg-white after:transition-transform after:duration-500 after:ease-out after:scale-x-100 after:origin-left hover:after:scale-x-0"
+            >
+              SEND
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none" className="size-2.5">
+                <path d="M9.464 0C9.87962 0 10.214 0.334375 10.214 0.75V8.25C10.214 8.66562 9.87962 9 9.464 9C9.04837 9 8.714 8.66562 8.714 8.25V2.55937L1.27893 10.0594C0.985181 10.3531 0.510181 10.3531 0.219556 10.0594C-0.0710693 9.76562 -0.0741943 9.29375 0.216431 9L7.6515 1.5H1.96087C1.54525 1.5 1.21087 1.16562 1.21087 0.75C1.21087 0.334375 1.54525 0 1.96087 0H9.46087H9.464Z" fill="currentColor" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+
+      <div className="text-white font-nohemi text-4xl md:text-9xl tracking-[0.15em] uppercase font-bold w-full py-4 text-center">
+        Jigar Interiors
+      </div>
+
+      <ul className="flex items-center flex-wrap gap-x-1 gap-y-0.5 md:gap-x-4 md:gap-y-1 uppercase text-white justify-center font-nohemi pt-4 text-[6px] md:text-xs">
+        {links.map((link, i) => (
+          <li key={i} className="flex items-center gap-x-1 md:gap-x-4">
+            <a href={link.href} className="hover:opacity-70 transition-opacity no-underline">{link.label}</a>
+            <span>/</span>
+          </li>
+        ))}
+        <li className="flex items-center gap-x-1 md:gap-x-4">
+          <span>Copyright Jigar Interiors 2026. All Rights Reserved</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3" aria-hidden="true">
+            <circle cx="12.1" cy="12.1" r="1" />
+          </svg>
+        </li>
+        <li className="flex items-center gap-x-1 md:gap-x-4">
+          <a href="/privacy-and-cookies" className="hover:opacity-70 transition-opacity no-underline">Privacy & Cookies</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3" aria-hidden="true">
+            <circle cx="12.1" cy="12.1" r="1" />
+          </svg>
+        </li>
+        <li className="flex items-center gap-x-1 md:gap-x-4">
+          <a href="/terms-and-conditions" className="hover:opacity-70 transition-opacity no-underline">Terms & Conditions</a>
+        </li>
+      </ul>
     </footer>
   );
 }

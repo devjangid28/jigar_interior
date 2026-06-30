@@ -30,7 +30,7 @@ export default function HeroSection() {
         <div>
           <div className="hero-subtitle" style={{ opacity: 0, transform: 'translateY(40px)' }}>
             <div className="text-sm text-white flex items-end justify-end font-inter">
-              <h2>At AbvTek, we blend innovation and intelligence to design the spaces of tomorrow</h2>
+              <h2>At Jigar Interiors, we blend innovation and intelligence to design the spaces of tomorrow</h2>
             </div>
           </div>
         </div>

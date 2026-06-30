@@ -89,7 +89,7 @@ export default function AboutIntroSection() {
             <div className="flex-col gap-8 md:ml-20 lg:ml-24 hidden md:flex">
               <div className="text-sm uppercase font-inter">
                 <a className="mr-10 text-theme-dark-green no-underline" href="/about-us">About</a>
-                <span className="text-black text-sm uppercase">Founded at the crossroads of design AND technology, AbvTek redefines architectural excellence in the UAE. Our journey is driven by curiosity, innovation, and a commitment to creating sustainable and intelligent spaces.</span>
+                <span className="text-black text-sm uppercase">Founded at the crossroads of design AND technology, Jigar Interiors redefines architectural excellence. Our journey is driven by curiosity, innovation, and a commitment to creating sustainable and intelligent spaces.</span>
               </div>
               <a
                 href="/technology-and-innovation"
