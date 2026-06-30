@@ -1,7 +1,6 @@
 import HeroSection from '@/components/HeroSection';
 import AboutIntroSection from '@/components/AboutIntroSection';
 import ProjectShowcaseSection from '@/components/ProjectShowcaseSection';
-import ProjectsSection from '@/components/ProjectsSection';
 import ServicesSection from '@/components/ServicesSection';
 import OurPeopleSection from '@/components/OurPeopleSection';
 import ContactFormSection from '@/components/ContactFormSection';
@@ -13,7 +12,6 @@ export default function Home() {
       <HeroSection />
       <AboutIntroSection />
       <ProjectShowcaseSection />
-      <ProjectsSection />
       <ServicesSection />
       <OurPeopleSection />
       <ContactFormSection />
