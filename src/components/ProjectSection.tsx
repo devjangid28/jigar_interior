@@ -26,27 +26,47 @@ export default function ProjectSection({ data }: { data: SectionData }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const triggersRef = useRef<ScrollTrigger[]>([]);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (typeof window === 'undefined') return;
+
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
+    // Clear existing triggers
+    triggersRef.current.forEach(t => t.kill());
+    triggersRef.current = [];
 
     const ctx = gsap.context(() => {
       data.cards.forEach((_, index) => {
         const trigger = cardRefs.current[index];
         if (!trigger) return;
 
-        ScrollTrigger.create({
+        const st = ScrollTrigger.create({
           trigger,
-          start: 'top center',
-          onEnter: () => setActiveIndex(index),
-          onEnterBack: () => setActiveIndex(index),
+          start: 'center center',
+          end: 'bottom center',
+          onEnter: () => {
+            setActiveIndex(index);
+          },
+          onEnterBack: () => {
+            setActiveIndex(index);
+          },
         });
+
+        triggersRef.current.push(st);
       });
 
       ScrollTrigger.refresh();
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      triggersRef.current.forEach(t => t.kill());
+      triggersRef.current = [];
+    };
   }, [data.cards]);
 
   return (
@@ -57,16 +77,16 @@ export default function ProjectSection({ data }: { data: SectionData }) {
     >
       {/* Transparent watermark heading */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center z-0">
-        <div className="text-center">
+        <div className="text-center px-4">
           <h2
             className="text-black/[0.04] font-nohemi font-bold whitespace-nowrap select-none leading-none tracking-tighter"
-            style={{ fontSize: 'clamp(4rem, 10vw, 12rem)' }}
+            style={{ fontSize: 'clamp(3rem, 10vw, 12rem)' }}
           >
             {data.title}
           </h2>
           <p
-            className="text-black/[0.03] font-nohemi font-light select-none tracking-wide"
-            style={{ fontSize: 'clamp(1rem, 2.5vw, 3rem)' }}
+            className="text-black/[0.03] font-nohemi font-light select-none tracking-wide mt-2"
+            style={{ fontSize: 'clamp(0.875rem, 2.5vw, 3rem)' }}
           >
             {data.location}
           </p>

@@ -18,15 +18,15 @@ const projectsData = [
         category: 'CORPORATE INTERIOR',
         title: 'Executive Suite',
         image:
-          'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+          'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85',
         description:
-          'A workspace envisioned as a living system \u2014 where technology, light, and form converge to elevate the rhythm of modern work.',
+          'A workspace envisioned as a living system — where technology, light, and form converge to elevate the rhythm of modern work.',
       },
       {
         category: 'CORPORATE INTERIOR',
         title: 'Collaborative Hub',
         image:
-          'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
+          'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=85',
         description:
           'Open-plan environments designed for seamless collaboration, integrating smart technology with biophilic principles.',
       },
@@ -34,7 +34,7 @@ const projectsData = [
         category: 'CORPORATE INTERIOR',
         title: 'Executive Boardroom',
         image:
-          'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80',
+          'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=85',
         description:
           'An executive boardroom that balances authority with warmth, featuring custom joinery and ambient lighting systems.',
       },
@@ -42,7 +42,7 @@ const projectsData = [
         category: 'CORPORATE INTERIOR',
         title: 'Wellness Zone',
         image:
-          'https://images.unsplash.com/photo-1604328698692-f76ea9498e72?w=800&q=80',
+          'https://images.unsplash.com/photo-1604328698692-f76ea9498e72?w=1200&q=85',
         description:
           'Wellness-focused zones that promote employee wellbeing through thoughtful spatial planning and natural materiality.',
       },
@@ -51,14 +51,14 @@ const projectsData = [
   {
     id: 'ina',
     title: 'INA Office',
-    location: 'Burj Khalifa, Dubai, UAE',
+    location: 'Business Bay, Dubai, UAE',
     layout: 'rightSticky' as const,
     cards: [
       {
         category: 'CULTURAL DESIGN',
         title: 'Reception & Lounge',
         image:
-          'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+          'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=85',
         description:
           'A reception space that embodies the meeting of Japanese minimalism and Emirati heritage through curated materiality.',
       },
@@ -66,7 +66,7 @@ const projectsData = [
         category: 'CULTURAL DESIGN',
         title: 'Private Offices',
         image:
-          'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+          'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85',
         description:
           'Private work sanctuaries designed for deep focus, wrapped in natural textures and diffused daylight.',
       },
@@ -74,7 +74,7 @@ const projectsData = [
         category: 'CULTURAL DESIGN',
         title: 'Meeting Pavilion',
         image:
-          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85',
         description:
           'A flexible pavilion for gatherings that transforms from presentation mode to collaborative workshop seamlessly.',
       },
@@ -82,9 +82,9 @@ const projectsData = [
         category: 'CULTURAL DESIGN',
         title: 'Tea Ceremony Room',
         image:
-          'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80',
+          'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=85',
         description:
-          'A contemplative tea room inspired by chanoyu \u2014 a space for ritual, pause, and meaningful connection.',
+          'A contemplative tea room inspired by chanoyu — a space for ritual, pause, and meaningful connection.',
       },
     ],
   },
@@ -98,15 +98,15 @@ const projectsData = [
         category: 'FITNESS INTERIOR',
         title: 'Main Arena',
         image:
-          'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+          'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=85',
         description:
-          'A main arena that pulses with energy \u2014 raw concrete, dramatic lighting, and the spirit of the ring.',
+          'A main arena that pulses with energy — raw concrete, dramatic lighting, and the spirit of the ring.',
       },
       {
         category: 'FITNESS INTERIOR',
         title: 'Training Zone',
         image:
-          'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80',
+          'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=85',
         description:
           'A training zone where every surface and sightline is engineered to push performance and motivation.',
       },
@@ -114,15 +114,15 @@ const projectsData = [
         category: 'FITNESS INTERIOR',
         title: 'Recovery Suite',
         image:
-          'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80',
+          'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=85',
         description:
-          'A recovery suite designed as a calm counterpoint \u2014 soft textures, muted tones, and restorative ambiance.',
+          'A recovery suite designed as a calm counterpoint — soft textures, muted tones, and restorative ambiance.',
       },
       {
         category: 'FITNESS INTERIOR',
         title: 'Fuel Bar',
         image:
-          'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80',
+          'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&q=85',
         description:
           'A fuel bar that fuses nutrition with social energy, featuring bold graphics and an open-kitchen concept.',
       },
@@ -158,14 +158,14 @@ export default function ProjectShowcaseSection() {
   return (
     <section ref={sectionRef} className="bg-[#F4F4F4] pb-12 md:pb-20">
       {/* Section Header */}
-      <div className="px-4 md:px-8 pt-20 md:pt-28 pb-8 md:pb-16">
-        <div className="showcase-fade" style={{ opacity: 0, transform: 'translateY(40px)' }}>
+      <div className="px-4 md:px-8 pt-20 md:pt-28 pb-8 md:pb-16 max-w-screen-2xl mx-auto">
+        <div className="showcase-fade mb-4" style={{ opacity: 0, transform: 'translateY(40px)' }}>
           <span className="text-theme-dark-green text-xs leading-[120%] tracking-[0.03rem] uppercase font-inter">
             Portfolio
           </span>
         </div>
         <div className="showcase-fade" style={{ opacity: 0, transform: 'translateY(40px)' }}>
-          <div className="text-black text-[1.75rem] leading-[100%] md:text-[2.2rem] lg:text-[2.625rem] md:leading-[110%] uppercase -indent-16 md:-indent-20 lg:-indent-24 ml-16 md:ml-20 lg:ml-24 font-nohemi">
+          <div className="text-black text-[1.75rem] leading-[100%] md:text-[2.2rem] lg:text-[2.625rem] md:leading-[110%] uppercase font-nohemi">
             <p>
               Premium
               <br />

@@ -109,7 +109,7 @@ export default function AboutIntroSection() {
           ref={imageRef}
           alt="Design as memory — crafted, intelligent, alive"
           title="Design as memory — crafted, intelligent, alive"
-          src="https://cp.abvtek.com/assets/home-page/homepage-about.webp"
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
           className="w-full object-cover"
           style={{
             height: '135%',
@@ -124,7 +124,7 @@ export default function AboutIntroSection() {
           <div className="flex-col gap-8 md:ml-20 lg:ml-24 flex md:hidden">
             <div className="text-sm uppercase font-inter">
               <a className="mr-10 text-theme-dark-green no-underline" href="/about-us">About</a>
-              <span className="text-black text-sm uppercase">Founded at the crossroads of design AND technology, AbvTek redefines architectural excellence in the UAE. Our journey is driven by curiosity, innovation, and a commitment to creating sustainable and intelligent spaces.</span>
+              <span className="text-black text-sm uppercase">Founded at the crossroads of design and technology, Jigar Interiors redefines architectural excellence through thoughtful design, premium craftsmanship, and modern innovation. Our journey is driven by creativity, precision, sustainability, and the commitment to creating intelligent interior spaces.</span>
             </div>
             <a
               href="/technology-and-innovation"

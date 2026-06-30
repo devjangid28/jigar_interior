@@ -18,6 +18,10 @@ export default function StickyGallery({
 
   useEffect(() => {
     if (initialRef.current) {
+      // Set first image visible on mount
+      if (imageRefs.current[0]) {
+        gsap.set(imageRefs.current[0], { opacity: 1, scale: 1 });
+      }
       initialRef.current = false;
       return;
     }
@@ -30,12 +34,23 @@ export default function StickyGallery({
     const next = imageRefs.current[activeIndex];
     if (!prev || !next) return;
 
-    gsap.killTweensOf(prev);
-    gsap.killTweensOf(next);
+    // Kill any existing animations
+    gsap.killTweensOf([prev, next]);
 
-    gsap.set(next, { opacity: 0, scale: 1.05 });
+    // Prepare next image
+    gsap.set(next, { opacity: 0, scale: 1.05, zIndex: 2 });
+    gsap.set(prev, { zIndex: 1 });
 
-    const tl = gsap.timeline({ defaults: { duration: 0.8, ease: 'power2.out' } });
+    // Crossfade with zoom effect
+    const tl = gsap.timeline({ 
+      defaults: { duration: 0.8, ease: 'power2.out' },
+      onComplete: () => {
+        // Cleanup: hide previous image completely
+        gsap.set(prev, { opacity: 0, scale: 1.05, zIndex: 0 });
+        gsap.set(next, { zIndex: 1 });
+      }
+    });
+    
     tl.to(prev, { opacity: 0, scale: 1.05 }, 0);
     tl.to(next, { opacity: 1, scale: 1 }, 0);
 
@@ -52,9 +67,10 @@ export default function StickyGallery({
           }}
           className="absolute inset-0"
           style={{
-            opacity: index === 0 ? 1 : 0,
-            scale: index === 0 ? 1 : 1.05,
+            opacity: 0,
+            scale: 1.05,
             willChange: 'transform, opacity',
+            zIndex: 0,
           }}
         >
           <img
