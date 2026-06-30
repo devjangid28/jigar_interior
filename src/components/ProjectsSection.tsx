@@ -118,7 +118,7 @@ export default function ProjectsSection() {
       <div className="hidden md:block" style={{ height: '100dvh', position: 'relative', overflow: 'hidden' }}>
         <div className="flex flex-col sticky top-0 h-dvh overflow-hidden">
           <div className="grow flex items-center overflow-hidden px-4 md:px-8">
-            <div className="flex items-start my-auto gap-8 lg:gap-16 will-change-transform overflow-x-auto pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="flex items-start my-auto gap-8 lg:gap-16 will-change-transform overflow-x-auto pb-4 hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {projects.map((project) => (
                 <div key={project.title} className="flex-shrink-0" style={{ minWidth: '500px', maxWidth: '600px' }}>
                   <div className="flex flex-col gap-6">

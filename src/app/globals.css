@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: 'Nohemi';
   src: url('/fonts/Nohemi-VF.ttf') format('truetype');
